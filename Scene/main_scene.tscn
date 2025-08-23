@@ -419,28 +419,26 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AAALACsAAAAKAAAAAAAMACsAAAALAAAAAAANACsAAAAMAAAAAAAFACgAAAAKAAAAAAAGACgAAAALAAAAAAAHACgAAAAMAAAAAAARACgAAAAKAAAAAAASACgAAAALAAAAAAATACgAAAAMAAAAAAAFACkAAAAKAAEAAAAFACoAAAAKAAIAAAAGACkAAAALAAEAAAAGACoAAAALAAIAAAAHACkAAAAMAAEAAAAHACoAAAAMAAIAAAARACkAAAAKAAEAAAARACoAAAAKAAIAAAASACkAAAALAAEAAAASACoAAAALAAIAAAATACkAAAAMAAEAAAATACoAAAAMAAIAAAALACwAAAAKAAEAAAAMACwAAAALAAEAAAANACwAAAAMAAEAAAAMAC0AAAAJAA0AAAALAC0AAAAJAA0AAAANAC0AAAAJAA0AAAALAAwAAAAWAAMAAAALAA0AAAAWAAQAAAALAA4AAAAXAAsAAAAMAAwAAAAXAAMAAAAMAA0AAAAXAAQAAAAMAA4AAAAXAAUAAAANAAwAAAAYAAMAAAANAA0AAAAYAAQAAAANAA4AAAAXAAsAAAAFAA8AAAAWAAMAAAAFABAAAAAWAAQAAAAFABEAAAAWAAUAAAAGAA8AAAAXAAMAAAAGABAAAAAXAAQAAAAGABEAAAAXAAUAAAAHAA8AAAAYAAMAAAAHABAAAAAYAAQAAAAHABEAAAAYAAUAAAARAA8AAAAWAAMAAAARABAAAAAWAAQAAAARABEAAAAWAAUAAAASAA8AAAAXAAMAAAASABAAAAAXAAQAAAASABEAAAAXAAUAAAATAA8AAAAYAAMAAAATABAAAAAYAAQAAAATABEAAAAYAAUAAAA=")
 tile_set = SubResource("TileSet_4kvl3")
 
-[node name="CardSelectionUI" type="Control" parent="."]
+[node name="inGameUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CardSelectionUI"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+offset_right = 400.0
+offset_bottom = 912.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CardSelectionUI/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="inGameUI"]
+layout_mode = 0
+offset_right = 113.0
+offset_bottom = 31.0
+scale = Vector2(3.5, 3.5)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="inGameUI/VBoxContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="CardSelectionUI/VBoxContainer/HBoxContainer"]
+[node name="Button" type="Button" parent="inGameUI/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+text = "I AM BUTTON"
