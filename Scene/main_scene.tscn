@@ -429,16 +429,29 @@ offset_bottom = 912.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="inGameUI"]
+[node name="MarginContainer" type="MarginContainer" parent="inGameUI"]
 layout_mode = 0
-offset_right = 113.0
-offset_bottom = 31.0
-scale = Vector2(3.5, 3.5)
+offset_right = 400.0
+offset_bottom = 912.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="inGameUI/VBoxContainer"]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="inGameUI/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="inGameUI/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "I AM BUTTON"
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="inGameUI/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+
+[node name="a1Button" type="Button" parent="inGameUI/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "A1"
+
+[node name="ColorRect" type="ColorRect" parent="inGameUI/MarginContainer/VBoxContainer/HBoxContainer/a1Button"]
+layout_mode = 2
+offset_top = 1.0
+offset_right = 28.0
+offset_bottom = 35.0
+color = Color(0, 0, 0, 1)
