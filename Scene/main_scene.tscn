@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=4 uid="uid://qgwwgupcnfdc"]
+[gd_scene load_steps=10 format=4 uid="uid://qgwwgupcnfdc"]
 
 [ext_resource type="Script" uid="uid://clfe011u5i5xi" path="res://Scene/main_scene.gd" id="1_j4qrl"]
 [ext_resource type="Texture2D" uid="uid://hgsqxr02dnr4" path="res://Assets/Tilesheets/Solaria Demo Tiles.png" id="2_31fxm"]
+[ext_resource type="PackedScene" uid="uid://cky2dj16mbiy4" path="res://Scene/card.tscn" id="3_06yma"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_31fxm"]
 tile_data = PackedInt32Array(0, 458752, 0)
@@ -383,6 +384,9 @@ pattern_0 = SubResource("TileMapPattern_31fxm")
 pattern_1 = SubResource("TileMapPattern_06yma")
 pattern_2 = SubResource("TileMapPattern_4kvl3")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06yma"]
+size = Vector2(61, 48.8)
+
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_j4qrl")
 
@@ -420,6 +424,7 @@ tile_map_data = PackedByteArray("AAALACsAAAAKAAAAAAAMACsAAAALAAAAAAANACsAAAAMAAA
 tile_set = SubResource("TileSet_4kvl3")
 
 [node name="inGameUI" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -527,3 +532,22 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "A3"
+
+[node name="Deck" type="Node2D" parent="."]
+
+[node name="Node2D" parent="Deck" instance=ExtResource("3_06yma")]
+position = Vector2(208, 817)
+
+[node name="Target" type="Node2D" parent="."]
+scale = Vector2(5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Target"]
+position = Vector2(41.4, 129)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_06yma")
+
+[node name="Target2" type="Node2D" parent="."]
+visible = false
+
+[node name="Target3" type="Node2D" parent="."]
+visible = false
